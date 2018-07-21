@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Laurent Morel">
+    <meta name="description" content="Computer Science &amp; stuff">
+    <meta name="keywords" content="blog,developer,code">
+
+    <base href="https://lmorel3.fr/">
+    <title>
+  Fatal error: &#39;Table mysql.user doesn&#39;t exist&#39; · lmorel3.fr - Blog
+</title>
+
+    <link rel="canonical" href="https://lmorel3.fr/posts/2016-02-09-error-fatal-error-cant-open-and-lock-privilege-tables-table-mysql-user-doesnt-exist/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://lmorel3.fr/css/style.min.css">
+
+    
+
+    
+      <link rel="stylesheet" href="https://lmorel3.fr/style.css">
+    
+
+    <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.41" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://lmorel3.fr/">
+      lmorel3.fr - Blog
+    </a>
+    <ul class="navigation-list  float-right ">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Fatal error: &#39;Table mysql.user doesn&#39;t exist&#39;</h1>
+    </header>
+
+    <p>Pour une raison qui m&rsquo;est encore inconnue, la table <em>mysql.user</em> de mon serveur local a disparu.
+Après une bonne heure de recherche, je suis tombé sur ce post <a href="https://dba.stackexchange.com/a/44316">Stackoverflow</a> détaillant le schéma de la table.</p>
+
+<p>Pour résoudre le problème, allez dans le dossier <em>« bin »</em> de votre installation MySQL, ouvrez une invite de commande et exécutez :</p>
+
+<p><code>mysqld --console --bootstrap --verbose</code></p>
+
+<p>Dès que l&rsquo;exécution bloque, collez le code ci-dessous et patientez. Si ça ne se termine pas, faites un gros CTRL+C pour tuer le processus.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#fff;font-weight:bold">CREATE</span> <span style="color:#fff;font-weight:bold">TABLE</span> `mysql`.`<span style="color:#fff;font-weight:bold">user</span>` (
+`<span style="color:#fff;font-weight:bold">Host</span>` <span style="color:#fff;font-weight:bold">char</span>(<span style="color:#ff0;font-weight:bold">60</span>) <span style="color:#fff;font-weight:bold">COLLATE</span> utf8_bin <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;&#39;</span>,
+`<span style="color:#fff;font-weight:bold">User</span>` <span style="color:#fff;font-weight:bold">char</span>(<span style="color:#ff0;font-weight:bold">16</span>) <span style="color:#fff;font-weight:bold">COLLATE</span> utf8_bin <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;&#39;</span>,
+`Password` <span style="color:#fff;font-weight:bold">char</span>(<span style="color:#ff0;font-weight:bold">41</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> latin1 <span style="color:#fff;font-weight:bold">COLLATE</span> latin1_bin <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;&#39;</span>,
+`Select_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Insert_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Update_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Delete_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Create_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Drop_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Reload_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Shutdown_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Process_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`File_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Grant_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`References_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Index_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Alter_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Show_db_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Super_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Create_tmp_table_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Lock_tables_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Execute_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Repl_slave_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Repl_client_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Create_view_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Show_view_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Create_routine_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Alter_routine_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Create_user_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Event_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Trigger_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`Create_tablespace_priv` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+`ssl_type` enum(<span style="color:#0ff;font-weight:bold">&#39;&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;ANY&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;X509&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;SPECIFIED&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;&#39;</span>,
+`ssl_cipher` <span style="color:#fff;font-weight:bold">blob</span> <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span>,
+`x509_issuer` <span style="color:#fff;font-weight:bold">blob</span> <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span>,
+`x509_subject` <span style="color:#fff;font-weight:bold">blob</span> <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span>,
+`max_questions` <span style="color:#fff;font-weight:bold">int</span>(<span style="color:#ff0;font-weight:bold">11</span>) unsigned <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;0&#39;</span>,
+`max_updates` <span style="color:#fff;font-weight:bold">int</span>(<span style="color:#ff0;font-weight:bold">11</span>) unsigned <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;0&#39;</span>,
+`max_connections` <span style="color:#fff;font-weight:bold">int</span>(<span style="color:#ff0;font-weight:bold">11</span>) unsigned <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;0&#39;</span>,
+`max_user_connections` <span style="color:#fff;font-weight:bold">int</span>(<span style="color:#ff0;font-weight:bold">11</span>) unsigned <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;0&#39;</span>,
+`plugin` <span style="color:#fff;font-weight:bold">char</span>(<span style="color:#ff0;font-weight:bold">64</span>) <span style="color:#fff;font-weight:bold">COLLATE</span> utf8_bin <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;&#39;</span>,
+`authentication_string` <span style="color:#fff;font-weight:bold">text</span> <span style="color:#fff;font-weight:bold">COLLATE</span> utf8_bin,
+`password_expired` enum(<span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,<span style="color:#0ff;font-weight:bold">&#39;Y&#39;</span>) <span style="color:#fff;font-weight:bold">CHARACTER</span> <span style="color:#fff;font-weight:bold">SET</span> utf8 <span style="color:#fff;font-weight:bold">NOT</span> <span style="color:#fff;font-weight:bold">NULL</span> <span style="color:#fff;font-weight:bold">DEFAULT</span> <span style="color:#0ff;font-weight:bold">&#39;N&#39;</span>,
+<span style="color:#fff;font-weight:bold">PRIMARY</span> <span style="color:#fff;font-weight:bold">KEY</span> (`<span style="color:#fff;font-weight:bold">Host</span>`,`<span style="color:#fff;font-weight:bold">User</span>`)
+) ENGINE=MyISAM <span style="color:#fff;font-weight:bold">DEFAULT</span> CHARSET=utf8 <span style="color:#fff;font-weight:bold">COLLATE</span>=utf8_bin <span style="color:#fff;font-weight:bold">COMMENT</span>=<span style="color:#0ff;font-weight:bold">&#39;Users and global privileges&#39;</span></code></pre></div>
+<p>C&rsquo;est presque terminé ! En effet, il reste à recréer l&rsquo;utilisateur par défaut MySQL.</p>
+
+<p>Pour cela, créez un fichier <em>« script.sql »</em> (ou autre) avec ces instructions à l&rsquo;intérieur :</p>
+
+<p><code>CREATE USER 'root'@'%' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'
+WITH GRANT OPTION;</code></p>
+
+<p>Puis exécutez :</p>
+
+<p><code>mysqld --init-file=&lt;CHEMIN VERS script.sql&gt;</code></p>
+
+<p>Coupez le processus (CTRL+C) et lancez Wamp ou tout autre environnement.</p>
+
+<p>En espérant vous avoir fait gagner l&rsquo;heure et demie que j&rsquo;ai perdu 🙂</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

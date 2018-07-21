@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lmorel3.fr - Blog</title>
+    <link>https://lmorel3.fr/</link>
+    <description>Recent content on lmorel3.fr - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Sat, 04 Feb 2017 12:16:52 +0000</lastBuildDate>
+    
+	<atom:link href="https://lmorel3.fr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rooter son Huawei P8 : la méthode facile</title>
+      <link>https://lmorel3.fr/2017/02/rooter-son-huawei-p8-la-methode-facile/</link>
+      <pubDate>Sat, 04 Feb 2017 12:16:52 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2017/02/rooter-son-huawei-p8-la-methode-facile/</guid>
+      <description>&lt;p&gt;Après quelques déboires lors de mes tentatives de root de mon Huawei P8, tout fonctionne. C&amp;rsquo;est pourquoi j&amp;rsquo;ai décidé de partager la (seule) méthode qui a fonctionné. C&amp;rsquo;est parti !&lt;/p&gt;
+
+&lt;h3 id=&#34;étape-1-le-compte-huawei-id&#34;&gt;Étape 1 : Le compte Huawei ID&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Ouvrir l&amp;rsquo;application Huawei ID puis dans dans « Settings », cliquez sur « Créer compte et se connecter »&lt;/li&gt;
+&lt;li&gt;Valider le compte&lt;/li&gt;
+&lt;li&gt;Rendez-vous sur &lt;a href=&#34;https://emui.huawei.com/en/plugin/unlock/index&#34;&gt;https://emui.huawei.com/en/plugin/unlock/index&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pas le choix, vous devez « Accepter les CGU »&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Remplissez le formulaire. Les informations sont trouvables dans « Paramètres &amp;gt; Informations sur le téléphone »&lt;/p&gt;
+
+&lt;p&gt;Cependant, pour avoir votre « Serial number », vous devez composer le  &lt;code&gt;*#*#1357946#*#*&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous obtiendrez un message du type : &lt;code&gt;Unlocking : 6-------2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Gardez dans un coin de votre ordinateur le code permettant de débloquer le téléphone&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Additionner des durées sur Google Sheets/Excel</title>
+      <link>https://lmorel3.fr/2016/06/additionner-des-durees-sur-google-sheetsexcel/</link>
+      <pubDate>Sat, 18 Jun 2016 06:47:38 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2016/06/additionner-des-durees-sur-google-sheetsexcel/</guid>
+      <description>Billet rapide pour vous expliquer un problème qui peut s&amp;rsquo;avérer pénible.
+En effet, ni Excel, ni Google Sheets (peut être LibreOffice Calc, quelqu&amp;rsquo;un confirme ?) ne détecte la présence de durées. Ils ne gèrent donc pas l&amp;rsquo;addition des durées par défaut.
+Pour pallier à ce problème, il faut simplement changer le format des cellules sur lesquelles vous travaillez.
+Entrez ce format personnalisé : [h]:mm
+Ce sont les accolades qui importent, vous pouvez également choisir [hh]:mm ou encore [hh]&#39;h&#39;mm et ainsi de suite.</description>
+    </item>
+    
+    <item>
+      <title>Fatal error: &#39;Table mysql.user doesn&#39;t exist&#39;</title>
+      <link>https://lmorel3.fr/posts/2016-02-09-error-fatal-error-cant-open-and-lock-privilege-tables-table-mysql-user-doesnt-exist/</link>
+      <pubDate>Tue, 09 Feb 2016 21:40:08 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/posts/2016-02-09-error-fatal-error-cant-open-and-lock-privilege-tables-table-mysql-user-doesnt-exist/</guid>
+      <description>Pour une raison qui m&amp;rsquo;est encore inconnue, la table mysql.user de mon serveur local a disparu. Après une bonne heure de recherche, je suis tombé sur ce post Stackoverflow détaillant le schéma de la table.
+Pour résoudre le problème, allez dans le dossier « bin » de votre installation MySQL, ouvrez une invite de commande et exécutez :
+mysqld --console --bootstrap --verbose
+Dès que l&amp;rsquo;exécution bloque, collez le code ci-dessous et patientez.</description>
+    </item>
+    
+    <item>
+      <title>Installer Homebrew sans XCode</title>
+      <link>https://lmorel3.fr/2015/09/installer-homebrew-sans-xcode/</link>
+      <pubDate>Sat, 19 Sep 2015 17:16:54 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2015/09/installer-homebrew-sans-xcode/</guid>
+      <description>Lancez le terminal et exécutez la commande suivante
+ xcode-select &amp;ndash;install
+ [1] Installez Homebrew
+ ruby -e &amp;ldquo;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+ Appuyez sur Entrée et tapez votre mot de passe puis patientez.
+ ==&amp;gt; Installation successful!
+==&amp;gt; Next steps
+Run `brew help` to get started
+ Tadam! Tapez ensuite « brew help » si vous souhaitez comprendre comment ça marche.</description>
+    </item>
+    
+    <item>
+      <title>Lancer Wamp sous Windows 10</title>
+      <link>https://lmorel3.fr/2015/08/lancer-wamp-sous-windows-10/</link>
+      <pubDate>Wed, 26 Aug 2015 09:24:15 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2015/08/lancer-wamp-sous-windows-10/</guid>
+      <description>Depuis peu, j&amp;rsquo;ai migré mon ordinateur vers Windows 10 et j&amp;rsquo;en suis plutôt content.
+C&amp;rsquo;est l&amp;rsquo;heure de la reprise donc j&amp;rsquo;ai voulu lancer Wamp pour travailler. Problème : Apache ne voulait plus se lancer (dû moins, le « Service Apache »).
+En vérifiant la disponibilité du port 80 avec l&amp;rsquo;outil fourni par Wamp, j&amp;rsquo;ai rapidement vu que c&amp;rsquo;était Windows IIS qui était en conflit. [D&amp;rsquo;ailleurs je n&amp;rsquo;ai pas compris pourquoi Windows 10 avait besoin de l&amp;rsquo;exécuter au démarrage, mise à part un message m&amp;rsquo;indiquant qu&amp;rsquo;il ne pourrait plus communiquer avec les serveurs d&amp;rsquo;activation de Microsoft (mince alors!</description>
+    </item>
+    
+    <item>
+      <title>Paramètres des mails Univ-Lyon1</title>
+      <link>https://lmorel3.fr/2015/06/parametres-des-mails-univ-lyon1/</link>
+      <pubDate>Thu, 04 Jun 2015 15:27:50 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2015/06/parametres-des-mails-univ-lyon1/</guid>
+      <description>Petite note sur la configuration mail de l&amp;rsquo;Univ Lyon1.
+Utilisez ces paramètres pour accéder à votre messagerie électronique à l&amp;rsquo;aide de POP, IMAP ou SMTP.
+   Paramètres Nom de serveur Port Méthode de chiffrement     POP accesbv.univ-lyon1.fr 995 SSL   IMAP accesbv.univ-lyon1.fr 993 SSL   SMTP smtpbv.univ-lyon1.fr 587 STARTSSL    Pour ce qui est des modes d&amp;rsquo;authentification, voilà une capture d&amp;rsquo;écran de mon Thunderbird :</description>
+    </item>
+    
+    <item>
+      <title>Paramétrer les MMS Numericable (SFR)</title>
+      <link>https://lmorel3.fr/2015/06/parametrer-les-mms-numericable-sfr/</link>
+      <pubDate>Mon, 01 Jun 2015 16:54:21 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2015/06/parametrer-les-mms-numericable-sfr/</guid>
+      <description>Numericable n&amp;rsquo;a pas l&amp;rsquo;air de vouloir aider ses clients alors je le fais pour vous.
+Si comme moi vous cherchiez sur la page censée être adéquate, les paramètres de configuration des MMS pour les SIM activées après le « 20/01/2014 », voici la méthode à suivre :
+Ajoutez un nouvel APN :
+ iPhone : Configuration automatique   BlackBerry : Configuration automatique et non modifiable.   Sous Android Version Réseaux  Paramètres du réseau mobile  Nom des points d’accès ».</description>
+    </item>
+    
+    <item>
+      <title>Apaxy : rendre élégant les dossiers sous Apache</title>
+      <link>https://lmorel3.fr/2014/08/apaxy-rendre-elegant-les-dossiers-sous-apache/</link>
+      <pubDate>Tue, 26 Aug 2014 15:22:46 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2014/08/apaxy-rendre-elegant-les-dossiers-sous-apache/</guid>
+      <description>Vous aussi vous avez marre de la la laideur d&amp;rsquo;Apache et de son « Index of » * tout moche ?!
+*Interface de base Faites comme moi et installez Apaxy : c&amp;rsquo;est un thème pour customiser le listing des dossiers et fichiers Apache. Il est facilement modifiable et fonctionne simplement avec du HTML, du CSS et des images.
+En plus d&amp;rsquo;être chouette, c&amp;rsquo;est très facilement installable.
+* avec Apaxy installée Il suffit d&amp;rsquo;aller télécharger la dernière version disponible sur le dépôt GitHub en cliquant sur Download zip à droite.</description>
+    </item>
+    
+    <item>
+      <title>Débrickez votre HP Touchpad facilement !</title>
+      <link>https://lmorel3.fr/posts/2014-05-17-debrickez-votre-hp-touchpad-facilement/</link>
+      <pubDate>Sat, 17 May 2014 17:41:34 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/posts/2014-05-17-debrickez-votre-hp-touchpad-facilement/</guid>
+      <description>Bien l&amp;rsquo;bonjour ! Ma tablette HP Touchpad ne voulait plus démarrer et m&amp;rsquo;affichait une batterie avec un point d&amp;rsquo;interrogation à l&amp;rsquo;intérieur : comme sur la photo ci-contre. C&amp;rsquo;est une erreur dû à la batterie qui se serait entièrement décharger, chose que WebOS ne supporterait pas trop.
+Du coup, j&amp;rsquo;ai fouillé un peu l&amp;rsquo;Internet et il s&amp;rsquo;avère que quelqu&amp;rsquo;un a créé un petit script permettant de la débloquer ! Comme j&amp;rsquo;ai légèrement galérer je vous fait part de ma technique.</description>
+    </item>
+    
+    <item>
+      <title>Transformer sa Casio Graph 35&#43; (USB) en Graph 75 !</title>
+      <link>https://lmorel3.fr/2013/11/transformer-sa-casio-graph-35-usb-en-graph-75/</link>
+      <pubDate>Fri, 22 Nov 2013 21:02:30 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/2013/11/transformer-sa-casio-graph-35-usb-en-graph-75/</guid>
+      <description>Cool non ?
+Rassurez-vous, pas besoin de démonter la calculatrice, et encore moins de sortir le fer à souder ! Il vous suffira seulement d&amp;rsquo;un peu de patience, parce qu&amp;rsquo;une calculatrice&amp;hellip; c&amp;rsquo;est pas hyper rapide.
+Il s&amp;rsquo;agit là d&amp;rsquo;une simple modification « logicielle » afin de contourner le bridage de votre calculatrice. En effet, pour réduire les coûts de production, Casio a simplement installé des systèmes d&amp;rsquo;exploitation différents sur la même base « hardware » (comprenez : « la partie électronique est la même ») pour les modèles Graph 35+ USB, Graph 75, Graph 85/85SD et Graph 95.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://lmorel3.fr/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/about/</guid>
+      <description>Je m&amp;rsquo;appelle Laurent MOREL (lmorel3 sur les Internets), et je blogue et tweete à mes heures perdues.
+Entre 2014 et 2016, je suivais un DUT Informatique à l’Université Lyon 1, sur le campus de la Doua à Villeurbanne.
+Désormais, je divise mon emploi du temps entre norsys, une société de services informatiques et CPE Lyon, une école d&amp;rsquo;ingénieurs sur le campus de la Doua dans laquelle je prépare le diplôme Informatique et Réseaux de Communication.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Laurent Morel">
+    <meta name="description" content="Computer Science &amp; stuff">
+    <meta name="keywords" content="blog,developer,code">
+
+    <base href="https://lmorel3.fr/">
+    <title>
+  Additionner des durées sur Google Sheets/Excel · lmorel3.fr - Blog
+</title>
+
+    <link rel="canonical" href="https://lmorel3.fr/2016/06/additionner-des-durees-sur-google-sheetsexcel/">
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://lmorel3.fr/css/style.min.css">
+
+    
+
+    
+      <link rel="stylesheet" href="https://lmorel3.fr/style.css">
+    
+
+    <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.41" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://lmorel3.fr/">
+      lmorel3.fr - Blog
+    </a>
+    <ul class="navigation-list  float-right ">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Additionner des durées sur Google Sheets/Excel</h1>
+    </header>
+
+    <p>Billet rapide pour vous expliquer un problème qui peut s&rsquo;avérer pénible.</p>
+
+<p>En effet, ni <strong>Excel</strong>, ni <strong>Google Sheets</strong> (peut être LibreOffice Calc, quelqu&rsquo;un confirme ?) ne détecte la présence de durées. Ils ne gèrent donc  pas l&rsquo;addition des durées par défaut.</p>
+
+<p>Pour pallier à ce problème, il faut simplement <strong>changer le format des cellules</strong> sur lesquelles vous travaillez.</p>
+
+<p>Entrez ce format personnalisé : <code>[h]:mm</code></p>
+
+<p>Ce sont les accolades qui importent, vous pouvez également choisir <code>[hh]:mm</code> ou encore <code>[hh]'h'mm</code> et ainsi de suite.</p>
+
+<p>Ainsi, vous pouvez faire une  <code>SOMME()</code> &#8211; ou <code>SUM()</code> sur Sheets &#8211; sur ces cellules.</p>
+
+<p>&nbsp;</p>
+
+<p>En espérant vous avoir fait gagner du temps !</p>
+
+<p>Laurent</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
