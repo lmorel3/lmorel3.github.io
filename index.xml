@@ -6,10 +6,19 @@
     <description>Recent content on lmorel3.fr - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Sat, 04 Feb 2017 12:16:52 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Aug 2018 12:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://lmorel3.fr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kobo : reprenez le contrôle !</title>
+      <link>https://lmorel3.fr/posts/kobo-root/</link>
+      <pubDate>Sat, 18 Aug 2018 12:00:00 +0000</pubDate>
+      
+      <guid>https://lmorel3.fr/posts/kobo-root/</guid>
+      <description>Mais pourquoi ?! Vous vous demandez sans doute pourquoi rooter une liseuse, et qui plus est, pourquoi installer une nouvelle interface de lecture. Pour ma part, j&amp;rsquo;ai souhaité installer Koreader non seulement pour ne pas avoir toute la publicité du store Kobo, mais pour pouvoir également profiter du support de l&amp;rsquo;OPDS, un standard permettant d&amp;rsquo;accéder à une bibliothèque à distance. Par exemple, il est possible d&amp;rsquo;installer sur son serveur perso un outil comme COPS - ça marche aussi en local sans rien installer - afin d&amp;rsquo;avoir un flux synchronisé avec sa bibliothèque Calibre accessible depuis la liseuse : plutôt pratique !</description>
+    </item>
     
     <item>
       <title>Rooter son Huawei P8 : la méthode facile</title>
