@@ -1,114 +1,213 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Laurent Morel">
-    <meta name="description" content="Computer Science &amp; stuff">
+    <meta name="description" content="Vous aussi vous avez marre de la la laideur d&rsquo;Apache et de son « Index of » * tout moche ?!
+*Interface de base Faites comme moi et installez Apaxy : c&rsquo;est un thème pour customiser le listing des dossiers et fichiers Apache. Il est facilement modifiable et fonctionne simplement avec du HTML, du CSS et des images.
+En plus d&rsquo;être chouette, c&rsquo;est très facilement installable.
+* avec Apaxy installée Il suffit d&rsquo;aller télécharger la dernière version disponible sur le dépôt GitHub en cliquant sur Download zip à droite.">
     <meta name="keywords" content="blog,developer,code">
 
-    <base href="https://lmorel3.fr/">
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apaxy : rendre élégant les dossiers sous Apache"/>
+<meta name="twitter:description" content="Vous aussi vous avez marre de la la laideur d&rsquo;Apache et de son « Index of » * tout moche ?!
+*Interface de base Faites comme moi et installez Apaxy : c&rsquo;est un thème pour customiser le listing des dossiers et fichiers Apache. Il est facilement modifiable et fonctionne simplement avec du HTML, du CSS et des images.
+En plus d&rsquo;être chouette, c&rsquo;est très facilement installable.
+* avec Apaxy installée Il suffit d&rsquo;aller télécharger la dernière version disponible sur le dépôt GitHub en cliquant sur Download zip à droite."/>
+
+    <meta property="og:title" content="Apaxy : rendre élégant les dossiers sous Apache" />
+<meta property="og:description" content="Vous aussi vous avez marre de la la laideur d&rsquo;Apache et de son « Index of » * tout moche ?!
+*Interface de base Faites comme moi et installez Apaxy : c&rsquo;est un thème pour customiser le listing des dossiers et fichiers Apache. Il est facilement modifiable et fonctionne simplement avec du HTML, du CSS et des images.
+En plus d&rsquo;être chouette, c&rsquo;est très facilement installable.
+* avec Apaxy installée Il suffit d&rsquo;aller télécharger la dernière version disponible sur le dépôt GitHub en cliquant sur Download zip à droite." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lmorel3.fr/2014/08/apaxy-rendre-elegant-les-dossiers-sous-apache/" />
+<meta property="article:published_time" content="2014-08-26T15:22:46+00:00" />
+<meta property="article:modified_time" content="2014-08-26T15:22:46+00:00" />
+
+
     <title>
-  Apaxy : rendre élégant les dossiers sous Apache · lmorel3.fr - Blog
+  Apaxy : rendre élégant les dossiers sous Apache · Laurent MOREL
 </title>
 
-    <link rel="canonical" href="https://lmorel3.fr/2014/08/apaxy-rendre-elegant-les-dossiers-sous-apache/">
+    
+      <link rel="canonical" href="https://lmorel3.fr/2014/08/apaxy-rendre-elegant-les-dossiers-sous-apache/">
+    
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-    <link rel="stylesheet" href="https://lmorel3.fr/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://lmorel3.fr/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
 
     
 
     
-      <link rel="stylesheet" href="https://lmorel3.fr/style.css">
+      <link rel="stylesheet" href="https://lmorel3.fr/style.css" />
+    
+
     
 
     <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-16x16.png" sizes="16x16">
 
+    <link rel="apple-touch-icon" href="https://lmorel3.fr/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://lmorel3.fr/images/apple-touch-icon.png">
+
     
 
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.76.5" />
   </head>
 
-  <body class="">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="https://lmorel3.fr/">
-      lmorel3.fr - Blog
+      Laurent MOREL
     </a>
-    <ul class="navigation-list  float-right ">
+    
       
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
-          </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/#">|</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/contact/">Contact me</a>
+            </li>
+          
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
-          </li>
         
-      
-      
-    </ul>
+        
+      </ul>
+    
   </section>
 </nav>
 
 
       <div class="content">
         
-  <section class="container page">
-  <article>
-    <header>
-      <h1>Apaxy : rendre élégant les dossiers sous Apache</h1>
-    </header>
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Apaxy : rendre élégant les dossiers sous Apache</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2014-08-26T15:22:46Z'>
+                August 26, 2014
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
 
-    <p>Vous aussi vous avez marre de la la laideur d&rsquo;Apache et de son « Index of » * tout moche ?!</p>
-
+      <div>
+        
+        <p>Vous aussi vous avez marre de la la laideur d&rsquo;Apache et de son « Index of » * tout moche ?!</p>
 <p class="aligncenter">
   <img src="https://lmorel3.fr/images/apaxy/apache-index.png" alt="apache-indexof" width="537" height="568" srcset="https://lmorel3.fr/images/apaxy/apache-index.png 537w, https://lmorel3.fr/images/apaxy/apache-index-284x300.png 284w" sizes="(max-width: 537px) 100vw, 537px" /><br>
   <em>*Interface de base</em>
 </p>
-
 <p>Faites comme moi et installez <strong><a href="http://adamwhitcroft.com/apaxy/">Apaxy</a></strong> : c&rsquo;est un <strong>thème pour customiser le listing des dossiers et fichiers Apache</strong>. Il est facilement modifiable et fonctionne simplement avec du HTML, du CSS et des images.</p>
-
 <p>En plus d&rsquo;être chouette, c&rsquo;est très facilement installable.</p>
-
 <p class="aligncenter">
   <img src="https://lmorel3.fr/images/apaxy/example.png" alt="Apaxy" width="694" height="470" /><br>
   <em>* avec Apaxy installée</em>
 </p>
-
 <p>Il suffit d&rsquo;aller télécharger la dernière version disponible sur le <a href="https://github.com/AdamWhitcroft/Apaxy">dépôt GitHub</a> en cliquant sur <em>Download zip</em> à droite.
 Ensuite il faut extraire le contenu du dossier <em>apaxy</em> à la racine de votre serveur web (exemple <em>C:/wamp/www</em> pour les utilisateurs de Wamp).</p>
-
-<p>Pour que cela fonctionne, il vous suffit de renommer le <em>htaccess.txt</em> en <em><strong>.</strong>htaccess</em>, de l&rsquo;ouvrir et de remplacer <em>/{FOLDERNAME}/theme</em> par <em>/theme</em> puis de sauvegarder le fichier.</p>
-
+<p>Pour que cela fonctionne, il vous suffit de renommer le <em>htaccess.txt</em> en <em>**.**htaccess</em>, de l&rsquo;ouvrir et de remplacer <em>/{FOLDERNAME}/theme</em> par <em>/theme</em> puis de sauvegarder le fichier.</p>
 <p>Voilà, vos dossiers seront tout propre !</p>
-
 <p>Nb : Ceux pour qui ça ne fonctionnerait pas, vérifiez que l&rsquo;extension Apache <em>« mod_autoindex »</em> soit activée !</p>
-
-  </article>
-</section>
-
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
     
-       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
   </section>
-</footer>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+      
+        
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
 
     </main>
 
     
+      
+      <script src="https://lmorel3.fr/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
 
+    
+
+    
+
+    
+
+    
+
+    
   </body>
 
 </html>

@@ -1,159 +1,253 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Laurent Morel">
-    <meta name="description" content="Computer Science &amp; stuff">
+    <meta name="description" content="Bien l&rsquo;bonjour ! Ma tablette HP Touchpad ne voulait plus démarrer et m&rsquo;affichait une batterie avec un point d&rsquo;interrogation à l&rsquo;intérieur : comme sur la photo ci-contre. C&rsquo;est une erreur dû à la batterie qui se serait entièrement décharger, chose que WebOS ne supporterait pas trop.
+Du coup, j&rsquo;ai fouillé un peu l&rsquo;Internet et il s&rsquo;avère que quelqu&rsquo;un a créé un petit script permettant de la débloquer ! Comme j&rsquo;ai légèrement galérer je vous fait part de ma technique.">
     <meta name="keywords" content="blog,developer,code">
 
-    <base href="https://lmorel3.fr/">
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Débrickez votre HP Touchpad facilement !"/>
+<meta name="twitter:description" content="Bien l&rsquo;bonjour ! Ma tablette HP Touchpad ne voulait plus démarrer et m&rsquo;affichait une batterie avec un point d&rsquo;interrogation à l&rsquo;intérieur : comme sur la photo ci-contre. C&rsquo;est une erreur dû à la batterie qui se serait entièrement décharger, chose que WebOS ne supporterait pas trop.
+Du coup, j&rsquo;ai fouillé un peu l&rsquo;Internet et il s&rsquo;avère que quelqu&rsquo;un a créé un petit script permettant de la débloquer ! Comme j&rsquo;ai légèrement galérer je vous fait part de ma technique."/>
+
+    <meta property="og:title" content="Débrickez votre HP Touchpad facilement !" />
+<meta property="og:description" content="Bien l&rsquo;bonjour ! Ma tablette HP Touchpad ne voulait plus démarrer et m&rsquo;affichait une batterie avec un point d&rsquo;interrogation à l&rsquo;intérieur : comme sur la photo ci-contre. C&rsquo;est une erreur dû à la batterie qui se serait entièrement décharger, chose que WebOS ne supporterait pas trop.
+Du coup, j&rsquo;ai fouillé un peu l&rsquo;Internet et il s&rsquo;avère que quelqu&rsquo;un a créé un petit script permettant de la débloquer ! Comme j&rsquo;ai légèrement galérer je vous fait part de ma technique." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lmorel3.fr/posts/2014-05-17-debrickez-votre-hp-touchpad-facilement/" />
+<meta property="article:published_time" content="2014-05-17T17:41:34+00:00" />
+<meta property="article:modified_time" content="2014-05-17T17:41:34+00:00" />
+
+
     <title>
-  Débrickez votre HP Touchpad facilement ! · lmorel3.fr - Blog
+  Débrickez votre HP Touchpad facilement ! · Laurent MOREL
 </title>
 
-    <link rel="canonical" href="https://lmorel3.fr/posts/2014-05-17-debrickez-votre-hp-touchpad-facilement/">
+    
+      <link rel="canonical" href="https://lmorel3.fr/posts/2014-05-17-debrickez-votre-hp-touchpad-facilement/">
+    
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-    <link rel="stylesheet" href="https://lmorel3.fr/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://lmorel3.fr/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
 
     
 
     
-      <link rel="stylesheet" href="https://lmorel3.fr/style.css">
+      <link rel="stylesheet" href="https://lmorel3.fr/style.css" />
+    
+
     
 
     <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-16x16.png" sizes="16x16">
 
+    <link rel="apple-touch-icon" href="https://lmorel3.fr/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://lmorel3.fr/images/apple-touch-icon.png">
+
     
 
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.76.5" />
   </head>
 
-  <body class="">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="https://lmorel3.fr/">
-      lmorel3.fr - Blog
+      Laurent MOREL
     </a>
-    <ul class="navigation-list  float-right ">
+    
       
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
-          </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/#">|</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/contact/">Contact me</a>
+            </li>
+          
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
-          </li>
         
-      
-      
-    </ul>
+        
+      </ul>
+    
   </section>
 </nav>
 
 
       <div class="content">
         
-  <section class="container page">
-  <article>
-    <header>
-      <h1>Débrickez votre HP Touchpad facilement !</h1>
-    </header>
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Débrickez votre HP Touchpad facilement !</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2014-05-17T17:41:34Z'>
+                May 17, 2014
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
 
-    
-
-<p>Bien l&rsquo;bonjour ! Ma tablette HP Touchpad ne voulait plus démarrer et m&rsquo;affichait une batterie avec un point d&rsquo;interrogation à l&rsquo;intérieur : comme sur la photo ci-contre. C&rsquo;est une erreur dû à la batterie qui se serait entièrement décharger, chose que WebOS ne supporterait pas trop.</p>
-
+      <div>
+        
+        <p>Bien l&rsquo;bonjour ! Ma tablette HP Touchpad ne voulait plus démarrer et m&rsquo;affichait une batterie avec un point d&rsquo;interrogation à l&rsquo;intérieur : comme sur la photo ci-contre. C&rsquo;est une erreur dû à la batterie qui se serait entièrement décharger, chose que WebOS ne supporterait pas trop.</p>
 <p>Du coup, j&rsquo;ai fouillé un peu l&rsquo;Internet et il s&rsquo;avère que quelqu&rsquo;un a créé un petit script permettant de la débloquer ! Comme j&rsquo;ai légèrement galérer je vous fait part de ma technique.</p>
-
 <p class="aligncenter">
   <img alt="Touchpad brick" src="https://lmorel3.fr/images/touchpad/touchpad_brick.jpg" width="666" height="310" srcset="https://lmorel3.fr/images/touchpad/touchpad_brick.jpg 666w, https://lmorel3.fr/images/touchpad/touchpad_brick-300x140.jpg 300w" sizes="(max-width: 666px) 100vw, 666px" />  
 </p>
-
 <h3 id="procédure">Procédure</h3>
-
 <p>Tout d&rsquo;abord, il vous faut une distribution Linux sous la main : j&rsquo;ai fait ça avec « Ubuntu 12.04.4 64bits » installé via <a href="http://doc.ubuntu-fr.org/wubi">Wubi (installer Linux en dual-boot depuis Windows)</a>.</p>
-
 <p>Ensuite, vous devez télécharger <a href="http://www.multiup.org/fr/mirror/96e3a01bb88b41d51c80e5e6b2b6e295/webosdoctorp305hstnhwifi.jar">WebOS Doctor en version 3.0.5 (choisissez un des liens)</a> ainsi que le script développé par le célèbre <em>jcsullins</em> : <a href="http://www.multiup.org/fr/mirror/f31d205395852510bd1c436b08d241bf/tpdebrick-v004.zip">TPDebrick v004</a>.</p>
-
 <p>Maintenant, c&rsquo;est sur Ubuntu que ça se passe !</p>
-
 <ol>
-<li>Lancez le Terminal</li>
-
-<li><p>Mettez-vous à jour et installez les dépendances nécessaires (important!)</p>
-
+<li>
+<p>Lancez le Terminal</p>
+</li>
+<li>
+<p>Mettez-vous à jour et installez les dépendances nécessaires (important!)</p>
 <blockquote>
 <p>sudo add-apt-repository ppa:nilarimogard/webupd8</p>
-
+</blockquote>
+<blockquote>
 <p>sudo apt-get update</p>
-
+</blockquote>
+<blockquote>
 <p>sudo apt-get install android-tools-adb android-tools-fastboot</p>
-</blockquote></li>
-
-<li><p>Rendez-vous dans le dossier &lsquo;Téléchargements&rsquo; puis dézippez l&rsquo;archive de TPDebrick</p>
-
+</blockquote>
+</li>
+<li>
+<p>Rendez-vous dans le dossier &lsquo;Téléchargements&rsquo; puis dézippez l&rsquo;archive de TPDebrick</p>
 <blockquote>
 <p>cd Downloads</p>
-
+</blockquote>
+<blockquote>
 <p>unzip tpdebrick-v004</p>
-</blockquote></li>
-
-<li><p>Entrez dans le dossier &lsquo;tpdebrick-v004&rsquo;</p>
-
+</blockquote>
+</li>
+<li>
+<p>Entrez dans le dossier &lsquo;tpdebrick-v004&rsquo;</p>
 <blockquote>
 <p>cd tpdebrick-004</p>
-</blockquote></li>
-
-<li><p>Branchez votre Touchpad</p></li>
-
-<li><p>Maintenez Power + Home + VolDown pendants 30 secondes</p></li>
-
-<li><p>Lancez la procédure (où SIZE est la taille de votre Touchpad : 16, 32, 64)</p>
-
+</blockquote>
+</li>
+<li>
+<p>Branchez votre Touchpad</p>
+</li>
+<li>
+<p>Maintenez Power + Home + VolDown pendants 30 secondes</p>
+</li>
+<li>
+<p>Lancez la procédure (où SIZE est la taille de votre Touchpad : 16, 32, 64)</p>
 <blockquote>
 <p>script</p>
-
+</blockquote>
+<blockquote>
 <p>sudo ./tpdebrick SIZE</p>
-</blockquote></li>
+</blockquote>
+</li>
 </ol>
-
 <p>&ndash;</p>
-
 <p>Maintenant, ne touchez plus à rien, ne débranchez pas le câble et patientez&hellip;</p>
-
 <p>Un message « ALL DONE » vous indiquera la fin de la procédure. Vous n&rsquo;aurez alors plus qu&rsquo;à brancher la Touchpad sur son chargeur OFFICIEL pendant plusieurs heures.</p>
-
 <p>Si vous avez besoin de plus d&rsquo;informations ou que vous rencontrez des erreurs, je vous invite à lire le <a href="http://rootzwiki.com/topic/38786-tpdebrick-v004/?pid=1093281">sujet original sur Rootzwiki</a>.</p>
-
 <p>Bon amusement! A bientôt! 🙂</p>
-
 <p>EDIT 24/02/16 : Lien TPDebrick mis à jour</p>
-
-  </article>
-</section>
-
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
     
-       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
   </section>
-</footer>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+      
+        
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
 
     </main>
 
     
+      
+      <script src="https://lmorel3.fr/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
 
+    
+
+    
+
+    
+
+    
+
+    
   </body>
 
 </html>

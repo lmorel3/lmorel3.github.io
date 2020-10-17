@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Laurent Morel">
+    <meta name="description" content="Aaa https://github.com/Airblader/i3/wiki/Compiling-&amp;-Installing
+sudo apt update &amp;&amp; sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \ libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \ libstartup-notification0-dev libxcb-randr0-dev \ libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \ libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \ autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev apt-get install -q -y -o Dpkg::Options::=&#34;--force-confdef&#34; \ -o Dpkg::Options::=&#34;--force-confold&#34; \ i3lock i3status dmenu dunst cd /path/where/you/want/the/repository # clone the repository git clone https://www.github.com/Airblader/i3 i3-gaps cd i3-gaps # compile &amp; install autoreconf --force --install rm -rf build/ mkdir -p build &amp;&amp; cd build/ # Disabling sanitizers is important for release versions!">
+    <meta name="keywords" content="blog,developer,code">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kobo : reprenez le contrôle !"/>
+<meta name="twitter:description" content="Aaa https://github.com/Airblader/i3/wiki/Compiling-&amp;-Installing
+sudo apt update &amp;&amp; sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \ libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \ libstartup-notification0-dev libxcb-randr0-dev \ libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \ libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \ autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev apt-get install -q -y -o Dpkg::Options::=&#34;--force-confdef&#34; \ -o Dpkg::Options::=&#34;--force-confold&#34; \ i3lock i3status dmenu dunst cd /path/where/you/want/the/repository # clone the repository git clone https://www.github.com/Airblader/i3 i3-gaps cd i3-gaps # compile &amp; install autoreconf --force --install rm -rf build/ mkdir -p build &amp;&amp; cd build/ # Disabling sanitizers is important for release versions!"/>
+
+    <meta property="og:title" content="Kobo : reprenez le contrôle !" />
+<meta property="og:description" content="Aaa https://github.com/Airblader/i3/wiki/Compiling-&amp;-Installing
+sudo apt update &amp;&amp; sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \ libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \ libstartup-notification0-dev libxcb-randr0-dev \ libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \ libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \ autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev apt-get install -q -y -o Dpkg::Options::=&#34;--force-confdef&#34; \ -o Dpkg::Options::=&#34;--force-confold&#34; \ i3lock i3status dmenu dunst cd /path/where/you/want/the/repository # clone the repository git clone https://www.github.com/Airblader/i3 i3-gaps cd i3-gaps # compile &amp; install autoreconf --force --install rm -rf build/ mkdir -p build &amp;&amp; cd build/ # Disabling sanitizers is important for release versions!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lmorel3.fr/posts/passer-a-i3/" />
+<meta property="article:published_time" content="2018-08-18T12:00:00+00:00" />
+<meta property="article:modified_time" content="2018-08-18T12:00:00+00:00" />
+
+
+    <title>
+  Kobo : reprenez le contrôle ! · Laurent MOREL
+</title>
+
+    
+      <link rel="canonical" href="https://lmorel3.fr/posts/passer-a-i3/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://lmorel3.fr/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://lmorel3.fr/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://lmorel3.fr/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://lmorel3.fr/">
+      Laurent MOREL
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/#">|</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/contact/">Contact me</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Kobo : reprenez le contrôle !</h1>
+    </header>
+
+    <h2 id="aaa">Aaa</h2>
+<p><a href="https://github.com/Airblader/i3/wiki/Compiling-&amp;-Installing">https://github.com/Airblader/i3/wiki/Compiling-&amp;-Installing</a></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo apt update &amp;&amp; sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
+libstartup-notification0-dev libxcb-randr0-dev \
+libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
+
+apt-get install -q -y   -o Dpkg::Options::=&#34;--force-confdef&#34; \
+                        -o Dpkg::Options::=&#34;--force-confold&#34; \
+i3lock i3status dmenu dunst
+</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cd /path/where/you/want/the/repository
+
+# clone the repository
+git clone https://www.github.com/Airblader/i3 i3-gaps
+cd i3-gaps
+
+# compile &amp; install
+autoreconf --force --install
+rm -rf build/
+mkdir -p build &amp;&amp; cd build/
+
+# Disabling sanitizers is important for release versions!
+# The prefix and sysconfdir are, obviously, dependent on the distribution.
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+</code></pre></div>
+  </article>
+</section>
+
+  
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+      
+        
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="https://lmorel3.fr/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

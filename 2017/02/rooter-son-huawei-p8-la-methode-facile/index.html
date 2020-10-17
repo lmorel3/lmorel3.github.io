@@ -1,164 +1,268 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Laurent Morel">
-    <meta name="description" content="Computer Science &amp; stuff">
+    <meta name="description" content="Après quelques déboires lors de mes tentatives de root de mon Huawei P8, tout fonctionne. C&rsquo;est pourquoi j&rsquo;ai décidé de partager la (seule) méthode qui a fonctionné. C&rsquo;est parti !
+Étape 1 : Le compte Huawei ID
+
+Ouvrir l&rsquo;application Huawei ID puis dans dans « Settings », cliquez sur « Créer compte et se connecter »
+Valider le compte
+Rendez-vous sur https://emui.huawei.com/en/plugin/unlock/index
+Pas le choix, vous devez « Accepter les CGU »
+Remplissez le formulaire. Les informations sont trouvables dans « Paramètres &gt; Informations sur le téléphone »
+
+Cependant, pour avoir votre « Serial number », vous devez composer le  `*#*#1357946#*#*`
+
+Vous obtiendrez un message du type : `Unlocking : 6-------2`
+
+
+Gardez dans un coin de votre ordinateur le code permettant de débloquer le téléphone
+">
     <meta name="keywords" content="blog,developer,code">
 
-    <base href="https://lmorel3.fr/">
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rooter son Huawei P8 : la méthode facile"/>
+<meta name="twitter:description" content="Après quelques déboires lors de mes tentatives de root de mon Huawei P8, tout fonctionne. C&rsquo;est pourquoi j&rsquo;ai décidé de partager la (seule) méthode qui a fonctionné. C&rsquo;est parti !
+Étape 1 : Le compte Huawei ID
+
+Ouvrir l&rsquo;application Huawei ID puis dans dans « Settings », cliquez sur « Créer compte et se connecter »
+Valider le compte
+Rendez-vous sur https://emui.huawei.com/en/plugin/unlock/index
+Pas le choix, vous devez « Accepter les CGU »
+Remplissez le formulaire. Les informations sont trouvables dans « Paramètres &gt; Informations sur le téléphone »
+
+Cependant, pour avoir votre « Serial number », vous devez composer le  `*#*#1357946#*#*`
+
+Vous obtiendrez un message du type : `Unlocking : 6-------2`
+
+
+Gardez dans un coin de votre ordinateur le code permettant de débloquer le téléphone
+"/>
+
+    <meta property="og:title" content="Rooter son Huawei P8 : la méthode facile" />
+<meta property="og:description" content="Après quelques déboires lors de mes tentatives de root de mon Huawei P8, tout fonctionne. C&rsquo;est pourquoi j&rsquo;ai décidé de partager la (seule) méthode qui a fonctionné. C&rsquo;est parti !
+Étape 1 : Le compte Huawei ID
+
+Ouvrir l&rsquo;application Huawei ID puis dans dans « Settings », cliquez sur « Créer compte et se connecter »
+Valider le compte
+Rendez-vous sur https://emui.huawei.com/en/plugin/unlock/index
+Pas le choix, vous devez « Accepter les CGU »
+Remplissez le formulaire. Les informations sont trouvables dans « Paramètres &gt; Informations sur le téléphone »
+
+Cependant, pour avoir votre « Serial number », vous devez composer le  `*#*#1357946#*#*`
+
+Vous obtiendrez un message du type : `Unlocking : 6-------2`
+
+
+Gardez dans un coin de votre ordinateur le code permettant de débloquer le téléphone
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lmorel3.fr/2017/02/rooter-son-huawei-p8-la-methode-facile/" />
+<meta property="article:published_time" content="2017-02-04T12:16:52+00:00" />
+<meta property="article:modified_time" content="2017-02-04T12:16:52+00:00" />
+
+
     <title>
-  Rooter son Huawei P8 : la méthode facile · lmorel3.fr - Blog
+  Rooter son Huawei P8 : la méthode facile · Laurent MOREL
 </title>
 
-    <link rel="canonical" href="https://lmorel3.fr/2017/02/rooter-son-huawei-p8-la-methode-facile/">
+    
+      <link rel="canonical" href="https://lmorel3.fr/2017/02/rooter-son-huawei-p8-la-methode-facile/">
+    
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-    <link rel="stylesheet" href="https://lmorel3.fr/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://lmorel3.fr/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
 
     
 
     
-      <link rel="stylesheet" href="https://lmorel3.fr/style.css">
+      <link rel="stylesheet" href="https://lmorel3.fr/style.css" />
+    
+
     
 
     <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://lmorel3.fr/images/favicon-16x16.png" sizes="16x16">
 
+    <link rel="apple-touch-icon" href="https://lmorel3.fr/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://lmorel3.fr/images/apple-touch-icon.png">
+
     
 
-    <meta name="generator" content="Hugo 0.41" />
+    <meta name="generator" content="Hugo 0.76.5" />
   </head>
 
-  <body class="">
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="https://lmorel3.fr/">
-      lmorel3.fr - Blog
+      Laurent MOREL
     </a>
-    <ul class="navigation-list  float-right ">
+    
       
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
-          </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/#">|</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://lmorel3.fr/contact/">Contact me</a>
+            </li>
+          
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://lmorel3.fr/about/">About</a>
-          </li>
         
-      
-      
-    </ul>
+        
+      </ul>
+    
   </section>
 </nav>
 
 
       <div class="content">
         
-  <section class="container page">
-  <article>
-    <header>
-      <h1>Rooter son Huawei P8 : la méthode facile</h1>
-    </header>
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Rooter son Huawei P8 : la méthode facile</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2017-02-04T12:16:52Z'>
+                February 4, 2017
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
 
-    <p>Après quelques déboires lors de mes tentatives de root de mon Huawei P8, tout fonctionne. C&rsquo;est pourquoi j&rsquo;ai décidé de partager la (seule) méthode qui a fonctionné. C&rsquo;est parti !</p>
-
-<h3 id="étape-1-le-compte-huawei-id">Étape 1 : Le compte Huawei ID</h3>
-
+      <div>
+        
+        <p>Après quelques déboires lors de mes tentatives de root de mon Huawei P8, tout fonctionne. C&rsquo;est pourquoi j&rsquo;ai décidé de partager la (seule) méthode qui a fonctionné. C&rsquo;est parti !</p>
+<h3 id="étape-1--le-compte-huawei-id">Étape 1 : Le compte Huawei ID</h3>
 <ol>
 <li>Ouvrir l&rsquo;application Huawei ID puis dans dans « Settings », cliquez sur « Créer compte et se connecter »</li>
 <li>Valider le compte</li>
 <li>Rendez-vous sur <a href="https://emui.huawei.com/en/plugin/unlock/index">https://emui.huawei.com/en/plugin/unlock/index</a></li>
 <li>Pas le choix, vous devez « Accepter les CGU »</li>
-
-<li><p>Remplissez le formulaire. Les informations sont trouvables dans « Paramètres &gt; Informations sur le téléphone »</p>
-
-<p>Cependant, pour avoir votre « Serial number », vous devez composer le  <code>*#*#1357946#*#*</code></p>
-
-<p>Vous obtiendrez un message du type : <code>Unlocking : 6-------2</code></p></li>
-
-<li><p>Gardez dans un coin de votre ordinateur le code permettant de débloquer le téléphone</p></li>
+<li>Remplissez le formulaire. Les informations sont trouvables dans « Paramètres &gt; Informations sur le téléphone »</li>
 </ol>
+<pre><code>Cependant, pour avoir votre « Serial number », vous devez composer le  `*#*#1357946#*#*`
 
-<p></p>
-
-<h3 id="étape-2-adb-le-débogage-toussa">Étape 2 : ADB, le débogage, toussa</h3>
-
+Vous obtiendrez un message du type : `Unlocking : 6-------2`
+</code></pre>
+<ol start="6">
+<li>Gardez dans un coin de votre ordinateur le code permettant de débloquer le téléphone</li>
+</ol>
+<h3 id="étape-2--adb-le-débogage-toussa">Étape 2 : ADB, le débogage, toussa</h3>
 <p>Si ADB est déjà présent sur votre ordinateur, passez à l&rsquo;étape 3.</p>
-
 <ol>
 <li>Téléchargez <a href="https://forum.xda-developers.com/showthread.php?t=2588979">ADB Installer sur XDA-Developers</a> (<a href="https://www.dropbox.com/s/mcxw0yy3jvydupd/adb-setup-1.4.3.exe?dl=0">lien direct pour la version 1.4.2</a>)</li>
 <li>Lancez l&rsquo;exécutable en mode Administrateur
-
 <ol>
 <li>« Install ADB and fastboot » -&gt; Y</li>
 <li>« Install ADB System Wide » -&gt; n</li>
 <li>« Install drivers » -&gt; Y</li>
-</ol></li>
+</ol>
+</li>
 <li>Activez maintenant le débogage USB (source: android-recovery.fr)</li>
 </ol>
-
 <p><strong>Etape 1. Débloquer le mode développeur</strong>
-  Trouvez les « Réglages » et tapez-le. Cliquez sur « A propos de Téléphone», tapez « Numéro de version » sept fois jusqu&rsquo;à obtenir une note « Vous êtes sous le mode développeur ».</p>
-
+Trouvez les « Réglages » et tapez-le. Cliquez sur « A propos de Téléphone», tapez « Numéro de version » sept fois jusqu&rsquo;à obtenir une note « Vous êtes sous le mode développeur ».</p>
 <p><strong>Etape 2. Activer le débogage USB Android</strong>
-  On retourne aux « Réglages » pour entrer les « Options pour les développeurs », puis on peut cochez « Débogage USB ».</p>
-
-<h3 id="étape-3-déblocage">Étape 3 : Déblocage</h3>
-
+On retourne aux « Réglages » pour entrer les « Options pour les développeurs », puis on peut cochez « Débogage USB ».</p>
+<h3 id="étape-3--déblocage">Étape 3 : Déblocage</h3>
 <ol>
 <li>Démarrez le téléphone en mode <strong>fastboot</strong> (maintenir « vol down » et « power  » pendant 10s)</li>
-
-<li><p>Lancer l&rsquo;invite de commandes et exécutez <code>fastboot devices</code></p>
-
-<p>Vous verrez apparaître votre téléphone : <code>S\***\***\***\***\****        fastboot</code></p></li>
-
-<li><p>Exécutez « <code>fastboot oem unlock CODE_DE_L_ETAPE_1</code> »</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">...
-OKAY [  1.554s]
-  
-finished. total time: 1.559s</pre></div>
-<p>Sur le téléphone, on voit apparaître « Phone unlocked » : le bootloader est débloqué !</p></li>
-
-<li><p>Tapez <code>fastboot reboot</code> pour redémarrer le téléphone</p></li>
+<li>Lancer l&rsquo;invite de commandes et exécutez <code>fastboot devices</code></li>
 </ol>
+<pre><code>Vous verrez apparaître votre téléphone : `S\***\***\***\***\****        fastboot`
+</code></pre>
+<ol start="3">
+<li>Exécutez « <code>fastboot oem unlock CODE_DE_L_ETAPE_1</code> »</li>
+</ol>
+<pre><code>```
+...
+OKAY [  1.554s]
 
-<p>&nbsp;</p>
+finished. total time: 1.559s
+```
 
-<h3 id="étape-4-flash-du-recovery">Étape 4 : Flash du recovery</h3>
-
+Sur le téléphone, on voit apparaître « Phone unlocked » : le bootloader est débloqué !
+</code></pre>
+<ol start="4">
+<li>Tapez <code>fastboot reboot</code> pour redémarrer le téléphone</li>
+</ol>
+<p> </p>
+<h3 id="étape-4--flash-du-recovery">Étape 4 : Flash du recovery</h3>
 <ol>
 <li>Télécharger TWRP pour P8 (<a href="https://www.androidfilehost.com/?fid=529152257862681510">lien pour la version 3.0.2.0</a>) et copiez-le dans un répertoire quelconque</li>
 <li>Démarrer à nouveau le téléphone en mode fastboot, et lancer l&rsquo;invite de commandes</li>
 <li>Déplacez-vous dans le dossier dans lequel vous avez placez le fichier contenant le recovery</li>
-
-<li><p>Exécutez « fastboot flash recovery .\KangV-HRT-TWRP-3.0.2.0.img »</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">target reported max download size of 471859200 bytes
-  
-sending &#39;recovery&#39; (26120 KB)...
-  
-OKAY [  0.559s]
-  
-writing &#39;recovery&#39;...
-  
-OKAY [  1.519s]</pre></div>
-<p>finished. total time: 2.088s</p></li>
-
-<li><p>Redémarrez : <code>fastboot reboot</code></p></li>
+<li>Exécutez « fastboot flash recovery .\KangV-HRT-TWRP-3.0.2.0.img »</li>
 </ol>
+<pre><code>```
+target reported max download size of 471859200 bytes
 
-<p>&nbsp;</p>
+sending 'recovery' (26120 KB)...
 
-<h3 id="étape-5-installez-le-binaire-su">Étape 5 : Installez le binaire SU</h3>
+OKAY [  0.559s]
 
+writing 'recovery'...
+
+OKAY [  1.519s]
+```
+
+finished. total time: 2.088s
+</code></pre>
+<ol start="5">
+<li>Redémarrez : <code>fastboot reboot</code></li>
+</ol>
+<p> </p>
+<h3 id="étape-5--installez-le-binaire-su">Étape 5 : Installez le binaire SU</h3>
 <p><em>/!\ Si TWRP demande si on veut installer SuperSU : Refuser !!</em></p>
-
 <ol>
 <li>Téléchargez SuperSU (<a href="https://download.chainfire.eu/897/SuperSU/BETA-SuperSU-v2.67-20160121175247.zip?retrieve_file=1">lien pour la version 2.67</a>) et copiez-le dans votre téléphone</li>
 <li>Démarrez cette fois-ci en mode recovery (« adb reboot recovery » dans l&rsquo;invite de commandes ou alors démarrez avec « vol up + power »)</li>
@@ -167,31 +271,57 @@ OKAY [  1.519s]</pre></div>
 <li>Allez dans « Install » puis choisissez le fichier et validez (« Swipe »)</li>
 <li>Redémarrez</li>
 </ol>
-
 <p><em>/!\ Si TWRP demande si on veut installer SuperSU : Refuser !!</em></p>
-
-<p>&nbsp;</p>
-
+<p> </p>
 <p>Ça y est ! Si tout c&rsquo;est bien passé, vous avez désormais les privilèges d&rsquo;un super-utilisateur et vous pourrez profiter d&rsquo;un accès total à votre téléphone.  Super, non ? 🙂</p>
+<p> </p>
+      </div>
 
-<p>&nbsp;</p>
-  </article>
-</section>
 
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
 
       </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
-  </section>
-</footer>
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+      
+        
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
 
     </main>
 
     
+      
+      <script src="https://lmorel3.fr/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
 
+    
+
+    
+
+    
+
+    
+
+    
   </body>
 
 </html>

@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://lmorel3.fr/</loc>
+    <lastmod>2019-12-21T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lmorel3.fr/posts/</loc>
+    <lastmod>2019-12-21T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lmorel3.fr/posts/2019-12-netgear-wndr4300-openwrt/</loc>
+    <lastmod>2019-12-21T12:00:00+00:00</lastmod>
+  </url>
   
   <url>
     <loc>https://lmorel3.fr/posts/kobo-root/</loc>
@@ -63,24 +78,14 @@
   
   <url>
     <loc>https://lmorel3.fr/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lmorel3.fr/posts/</loc>
-    <lastmod>2018-08-18T12:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://lmorel3.fr/contact/</loc>
   </url>
   
   <url>
     <loc>https://lmorel3.fr/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://lmorel3.fr/</loc>
-    <lastmod>2018-08-18T12:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
